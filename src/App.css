@@ -1,38 +1,344 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body{
+  background-color:#1e1e1e ;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* spotify brand's logo */
+.brand-logo{
+  width: 150px;
+  padding-left: 15px;
+}
+/* content present in the sideMenu */
+.container-content{
+  margin-top: 100px;
+  margin-left: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* container div of the sideMenu */
+.container{
+  position: fixed;
+  height: 100%;
+  width: 225px;
+  background-color: black;
+  margin-top: 0;
+}
+
+/* icons from fontawesome */
+.favicon{
+  font-size: 25px;
+  margin-right: 25px;
+}
+
+/* all the icons and labels*/
+li{
+  margin-top: 25px;
+}
+
+/* icon for liked songs */
+.heart{
+  padding: 5px 5px !important;
+  margin-right: 25px;
+  font-size: 13px;
+  background: rgb(118,29,243);
+  background: -moz-linear-gradient(176deg, rgba(118,29,243,1) 11%, rgba(141,81,245,0.2559653744310224) 99%);
+  background: -webkit-linear-gradient(176deg, rgba(118,29,243,1) 11%, rgba(141,81,245,0.2559653744310224) 99%);
+  background: linear-gradient(176deg, rgba(118,29,243,1) 11%, rgba(141,81,245,0.2559653744310224) 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#761df3",endColorstr="#8d51f5",GradientType=1);
+}
+
+/* Sign up button prensent bottom right corner of the site */
+.footer-button{
+  position: fixed;
+  right: 50px;
+  width: 150px;
+  height: 55px;
+  border: 0;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  bottom:8px;
+}
+
+/* Button at bottom left of site to select lang*/
+.choose-lang{
+  margin-top: 50px;
+  color: white;
+  border:1px solid white;
+  border-radius: 25px;
+  padding: 8px 15px;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+/* UL containing the icons and the labels */
+ul{
+  list-style-type: none;
+  padding: 0 0;
+}
+
+/* UL present at bottom left corner alongwith the language button */
+.bottom{
+  position: absolute;
+  bottom: 70px;
+  color: aliceblue;
+  font-size: 14px;
+}
+
+/* footer that's present at bottom */
+.footer{
+  position: fixed;
+  padding-left: 15px;
+  padding-top: 10px;
+  bottom: 0;
+  width: 100vw;
+  height: 60px;
+  background: rgb(174,40,150);
+  background: -moz-linear-gradient(90deg, rgba(174,40,150,1) 11%, rgba(81,154,245,1) 99%);
+  background: -webkit-linear-gradient(90deg, rgba(174,40,150,1) 11%, rgba(81,154,245,1) 99%);
+  background: linear-gradient(90deg, rgba(174,40,150,1) 11%, rgba(81,154,245,1) 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ae2896",endColorstr="#519af5",GradientType=1);
+}
+
+/* heading that defines various categories of songs */
+.song-category{
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+/* navbar of the website */
+.navbar{
+  position: fixed;
+  background-color: black;
+  width: 100%;
+  opacity: .9;
+  height: 60px;
+  padding-top: 25px;
+  z-index: 50;
+ 
+}
+
+/* defines the card props */
+.card{
+  height: 70px;
+  margin-left: 30px;
+  margin-top: 15px;
+  color: white;
+  background-color: #191818;
+  display: inline-block;
+  width:165px;
+  padding-left: 15px;
+  padding-top: 15px;
+  height: 280px;
+  border-radius: 10px;
+  transition-property: all;
+  transition-duration: .5s;
+}
+
+/* div that contains all the cards */
+.cardholder{
+  margin-left: 250px;
+  padding-top: 70px;
+  padding-bottom: 150px;
+}
+
+/* defines props changed on hovering a card */
+.card:hover{
+  background-color: #323131;
+  
+}
+
+/* props of image inside card */
+.card-img{
+  width: 150px;
+  height: 150px;
+}
+
+/* <p> props are defined to show details */
+.song-detail{
+  font-size: 13px;
+}
+
+/* < > buttons props */
+.navigator{
+  font-size: 25px;
+  border-radius: 50%;
+  padding: 2px 7px;
+  color: rgb(176, 180, 180);
+  margin-left: 12px;
+  background-color:black;
+}
+
+/* signup button props present at the top right corner */
+.signup{
+  margin-right: 50px;
+  color:rgb(176, 180, 180);
+  font-weight: bold;
+}
+.signup:hover{
+  color: white;
+}
+
+.signup:link{
+  text-decoration: none;
+}
+
+/* login button props present at the top right corner */
+.login{
+  height: 60px;
+  width: 110px;
+  font-size: 16px;
+  border-radius: 40px;
+  border: #0b0b0b;
+  transition-duration: .5s;
+  cursor: pointer;
+  font-weight:bold;
+}
+
+.login:hover{
+    background-color: rgb(212, 212, 212);
+}
+
+/* div that holds < > buttons in navbar */
+.left-item{
+  position: absolute;
+  top:25px;
+  margin-left: 250px;
+}
+
+/* div that holds both login and signup button present in the top right corner of the site */
+.right-item{
+  position: fixed;
+  right: 0px;
+  top: 5px;
+}
+a:link{
+  text-decoration: none;
+  color: white;
+}
+a:visited{
+  color: white;
+}
+button{
+  cursor: pointer;
+}
+
+@media screen and (max-width:700px) {
+  .container{
+    visibility: hidden;
   }
-  to {
-    transform: rotate(360deg);
+  .left-item{
+    visibility: hidden;
   }
+  .cardholder{
+    margin-left: 0;
+  }
+  .navbar{
+    left:0px;
+  }
+  .footer-button{
+      position: absolute;
+  }
+  .footer{
+    visibility: hidden;
+  }
+  .ham-button{
+    visibility: visible !important;
+   }
+   li{
+    margin-left: 45px;
+   }
+}
+@media screen and (max-height:750px) {
+  .container{
+    visibility: hidden;
+  }
+  .left-item{
+    visibility: hidden;
+  }
+  .cardholder{
+    margin-left: 0;
+  }
+  .navbar{
+    left:0px;
+  }
+  .footer-button{
+      position: absolute;
+  }
+  .footer{
+    visibility: hidden;
+  }
+  .ham-button{
+    visibility: visible !important;
+   }
+   li{
+    margin-left: 45px;
+   }
+}
+@media screen and (max-width:900px) {
+
+ span{
+  display: inline-block;
+  width: 550px;
+ }
+ .footer-button{
+  right: 5px;
+ }
+ .footer{
+  padding-bottom: 5px;
+ }
+ .login{
+  width: 60px;
+  height: 45px;
+  border-radius: 12px;
+ }
+ .right-item{
+  margin-top: 15px;
+ }
+
+ .navigator{
+  cursor:none;
+ }
+ 
+}
+
+.ham-button{
+  font-size: 30px;
+  margin-left: 25px;
+  border-radius: 5px;
+  visibility: hidden;
+  border: 0;
+  margin-right: 15px;
+}
+.hide_menu{
+  background-color: #0b0b0b;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  padding: 0px 0 20px 40px !important;
+  top: 49px;
+  right: 0px;
+}
+
+.select_lang{
+  background-color: #262422;
+  height: 700px;
+  position: absolute;
+  top: 150px;
+  left:400px;
+  width: 1100px;
+  padding-left: 25px;
+}
+.lang_close_button{
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  font-size: 25px;
+  cursor: pointer;
+
+}
+.play-button{
+  width: 45px;
+  position: absolute;
+  padding-top: 100px;
+  padding-left: 100px;
 }

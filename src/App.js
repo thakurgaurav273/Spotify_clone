@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Sidebar from './Components/Side_bar';
+import Navbar from './Components/Navbar';
+import Card from './Components/Card';
+import Focus from './Components/focus';
+import Footer from './Components/Footer';
+import playlist from './Components/spotify_playlist';
+import Sound from './Components/sound_india';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <Sidebar/>
+    <Navbar/>
+    <div className='cardholder'>
+      <h3 className='song-category'>Focus</h3>
+      {Focus.map(Card)}
+      <h3 className='song-category'>Spotify Playlists</h3>
+      {playlist.map(Card)}
+      <h3 className='song-category'>Sound of India</h3>
+      {Sound.map(Card)}
     </div>
+    <Footer/>
+    </>
   );
 }
 
